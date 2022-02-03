@@ -1,6 +1,6 @@
 package com.company;
 
-class SLL {
+public class SLL {
     // ----------------------- Node --------------------
     private class Node {
         private int element;
@@ -44,12 +44,12 @@ class SLL {
         }
         else {
             tail.link(newNode);
-        //    tail = newNode;
-        //    size++;
+            //    tail = newNode;
+            //    size++;
 
         }
-            tail = newNode;
-            size++;
+        tail = newNode;
+        size++;
     }
 
     public void addFirst(int data) {
@@ -67,8 +67,8 @@ class SLL {
         {
             newNode.link(head);
         }
-            head=newNode;
-            size++;
+        head=newNode;
+        size++;
 
 
 
@@ -134,5 +134,54 @@ class SLL {
             System.out.println("null");
         }
     }
-}
 
+    public int getSize()
+    {
+        return size;
+
+    }
+
+    public boolean isEmpty()
+    {
+        if (size == 0)
+        {
+            return true;
+
+        }
+
+        else
+        {
+            return false;
+
+        }
+
+    }
+
+    public int get(int index)
+    {
+        int value = -999;
+
+        if (size > 0 && index < size)
+        {
+            Node pointer = head;
+
+            for (int i = 0; i < index; i++)
+            {
+                pointer = pointer.getNextNode();
+            }
+        }
+
+        else
+        {
+            System.out.println("Error, index is out of bound!");
+        }
+        return value;
+    }
+
+    void clear()
+    {
+        head = null;
+        tail = null;
+        size = 0;
+    }
+}
