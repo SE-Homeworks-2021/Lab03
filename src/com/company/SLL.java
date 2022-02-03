@@ -1,6 +1,10 @@
 package com.company;
 
 public class SLL {
+
+
+
+
     // ----------------------- Node --------------------
     private class Node {
         private int element;
@@ -184,4 +188,71 @@ public class SLL {
         tail = null;
         size = 0;
     }
+
+    public String findElement(int i)
+    {
+        Node pointer = head;
+
+        boolean isIt = false;
+
+        while (pointer.getNextNode() != null)
+        {
+            if (pointer.getElement() == i)
+            {
+                isIt = true;
+                break;
+            }
+
+            pointer = pointer.getNextNode();
+        }
+
+        if (pointer.getElement() == i)  // for tail
+        {
+            isIt = true;
+        }
+
+        return "Find element "+i+":"+isIt;
+    }
+
+    public String countElement(int i)
+    {
+        Node pointer = head;
+
+        int count = 0;
+
+        while (pointer.getNextNode() != null)
+        {
+            if (pointer.getElement() == i)
+            {
+                count++;
+            }
+
+            pointer = pointer.getNextNode();
+        }
+
+        if (pointer.getElement() == i) // for tail
+        {
+            count++;
+        }
+
+        return "Count element "+i+": "+count;
+    }
+
+    public String sumElement()
+    {
+        Node pointer = head;
+
+        int sum = 0;
+
+        while (pointer.getNextNode() != null)
+        {
+            sum += pointer.getElement();
+            pointer = pointer.getNextNode();
+        }
+
+        sum += pointer.getElement(); // for tail
+
+        return "Sum of all elemets: "+sum;
+    }
+
 }
