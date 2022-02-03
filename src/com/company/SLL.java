@@ -195,7 +195,7 @@ public class SLL {
 
         boolean isIt = false;
 
-        while (pointer.getNextNode() != null)
+        for(int num = 1 ; num <= size ;num++)
         {
             if (pointer.getElement() == i)
             {
@@ -204,11 +204,6 @@ public class SLL {
             }
 
             pointer = pointer.getNextNode();
-        }
-
-        if (pointer.getElement() == i)  // for tail
-        {
-            isIt = true;
         }
 
         return "Find element "+i+":"+isIt;
@@ -220,7 +215,7 @@ public class SLL {
 
         int count = 0;
 
-        while (pointer.getNextNode() != null)
+        for(int num = 1 ; num <= size ;num++)
         {
             if (pointer.getElement() == i)
             {
@@ -230,10 +225,6 @@ public class SLL {
             pointer = pointer.getNextNode();
         }
 
-        if (pointer.getElement() == i) // for tail
-        {
-            count++;
-        }
 
         return "Count element "+i+": "+count;
     }
@@ -244,13 +235,11 @@ public class SLL {
 
         int sum = 0;
 
-        while (pointer.getNextNode() != null)
+        for(int num = 1 ; num <= size ;num++)
         {
             sum += pointer.getElement();
             pointer = pointer.getNextNode();
         }
-
-        sum += pointer.getElement(); // for tail
 
         return "Sum of all elemets: "+sum;
     }
